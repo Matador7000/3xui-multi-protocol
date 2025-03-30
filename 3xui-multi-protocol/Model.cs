@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using System.IO;
 
 public class MultiProtocolContext : DbContext
 {
@@ -9,9 +10,9 @@ public class MultiProtocolContext : DbContext
 
     public MultiProtocolContext()
     {
+        // استفاده از Path.Combine برای اطمینان از سازگاری با سیستم‌های مختلف
         var folder = "/etc/x-ui/";
-
-        DbPath = System.IO.Path.Join(folder, "x-ui.db");
+        DbPath = Path.Combine(folder, "x-ui.db");
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder options)
@@ -21,19 +22,18 @@ public class MultiProtocolContext : DbContext
 public class Inbound
 {
     public int? Id { get; set; }
-    public string? listen { get; set; }
-    public int? user_id { get; set; }
-    public Int64? Up { get; set; }
-    public Int64? Down { get; set; }
-    public Int64? Total { get; set; }
+    public string? Listen { get; set; }
+    public int? UserId { get; set; }
+    public long? Up { get; set; }
+    public long? Down { get; set; }
+    public long? Total { get; set; }
     public string? Settings { get; set; }
-    public string? tag { get; set; }
-    public string? sniffing { get; set; }
-    public string? Stream_Settings { get; set; }
+    public string? Tag { get; set; }
+    public string? Sniffing { get; set; }
+    public string? StreamSettings { get; set; }
     public string? Remark { get; set; }
     public bool? Enable { get; set; }
-    public Int64? Expiry_Time { get; set; }
-
+    public long? ExpiryTime { get; set; }
     public int? Port { get; set; }
     public string? Protocol { get; set; }
 }
@@ -41,40 +41,39 @@ public class Inbound
 public class Client_Traffics
 {
     public int? Id { get; set; }
-    public int? Inbound_Id { get; set; }
+    public int? InboundId { get; set; }
     public int? Reset { get; set; }
     public string? Email { get; set; }
-    public Int64? Up { get; set; }
-    public Int64? Down { get; set; }
-    public Int64? Total { get; set; }
-    public Int64? Expiry_Time { get; set; }
+    public long? Up { get; set; }
+    public long? Down { get; set; }
+    public long? Total { get; set; }
+    public long? ExpiryTime { get; set; }
     public bool? Enable { get; set; }
 }
 
 public class Client
 {
-    public string? email { get; set; }
-    public bool? enable { get; set; }
-    public Int64? expiryTime { get; set; }
-    public string? flow { get; set; }
-    public string? id { get; set; }
-    public int? limitIp { get; set; }
-    public bool? reset { get; set; }
-    public string? subId { get; set; }
-    public string? tgId { get; set; }
-    public Int64? totalGB { get; set; }
+    public string? Email { get; set; }
+    public bool? Enable { get; set; }
+    public long? ExpiryTime { get; set; }
+    public string? Flow { get; set; }
+    public string? Id { get; set; }
+    public int? LimitIp { get; set; }
+    public bool? Reset { get; set; }
+    public string? SubId { get; set; }
+    public string? TgId { get; set; }
+    public long? TotalGB { get; set; }
 }
 
-public class inboundsetting
+public class InboundSetting
 {
-    public List<Client> clients { get; set; }
-    public string decryption { get; set; }
-    public List<object> fallbacks { get; set; }
+    public List<Client> Clients { get; set; }
+    public string Decryption { get; set; }
+    public List<object> Fallbacks { get; set; }
 }
 
-public class localDB
+public class LocalDB
 {
     public int Sec { get; set; }
-
-    public List<Client_Traffics> clients { get; set; }
+    public List<Client_Traffics> Clients { get; set; }
 }
