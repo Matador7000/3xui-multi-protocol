@@ -19,7 +19,7 @@ bash <(curl -Ls https://raw.githubusercontent.com/Matador7000/3xui-multi-protoco
 برای استفاده حتما باید کلاینت ها را در inbound های مورد نظر با Subscription  id یکسان ایجاد کنید!
 
 
-![image](https://github.com/M4mmad/3xui-multi-protocol/assets/61095662/196f9e7e-d248-4aed-940a-2ab8f9a13d95)
+![image](https://github.com/Matador7000/3xui-multi-protocol/assets/61095662/196f9e7e-d248-4aed-940a-2ab8f9a13d95)
 
 
 ## Stop
@@ -38,5 +38,5 @@ systemctl start 3xui-multi-protocol
 
 #حذف
 ```bash
-bash <(curl -Ls https://raw.githubusercontent.com/M4mmad/3xui-multi-protocol/master/unistall.sh --ipv4)
+bash <(curl -Ls https://raw.githubusercontent.com/Matador7000/3xui-multi-protocol/master/unistall.sh --ipv4)
 ```
