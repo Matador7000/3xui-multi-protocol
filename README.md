@@ -1,6 +1,5 @@
-# فقط روی ورژن 2.1.3 پنل تست شده است
-# 3xui-multi-protocol
 
+# 3xui-multi-protocol
 
 مولتی پروتکل ساز مخصوص پنل 3xui
 
