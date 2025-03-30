@@ -10,15 +10,13 @@ public class MultiProtocolContext : DbContext
     public MultiProtocolContext()
     {
         var folder = "/etc/x-ui/";
-     
+
         DbPath = System.IO.Path.Join(folder, "x-ui.db");
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder options)
         => options.UseSqlite($"Data Source={DbPath}");
 }
-
-
 
 public class Inbound
 {
@@ -40,9 +38,6 @@ public class Inbound
     public string? Protocol { get; set; }
 }
 
-
-
-
 public class Client_Traffics
 {
     public int? Id { get; set; }
@@ -54,7 +49,6 @@ public class Client_Traffics
     public Int64? Total { get; set; }
     public Int64? Expiry_Time { get; set; }
     public bool? Enable { get; set; }
-
 }
 
 public class Client
@@ -69,7 +63,6 @@ public class Client
     public string? subId { get; set; }
     public string? tgId { get; set; }
     public Int64? totalGB { get; set; }
-
 }
 
 public class inboundsetting
